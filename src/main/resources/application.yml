@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/codetickets_db
+    #necessario a linha abaixo quando usamos uma query na escrita com a classe JdbcBatchItemWriterBuilder
+    jdbcUrl: jdbc:postgresql://localhost/codetickets_db
+    username: 'myuser'
+    password: 'mypassword'
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  #propriedade para inicializar tabelas do spring batch para gravar metricas dos jobs
+  batch:
+    jdbc:
+      initialize-schema: always
